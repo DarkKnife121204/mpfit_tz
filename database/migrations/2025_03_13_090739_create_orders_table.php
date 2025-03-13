@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('full name');
+            $table->string('full_name');
             $table->enum('status', ['new', 'completed'])->default('new');
             $table->text('comment')->nullable();
             $table->foreignId('product_id')->index()->constrained('products');
