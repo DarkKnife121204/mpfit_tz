@@ -10,10 +10,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->id();
-            $table->id();
-            $table->id();
-            $table->id();
+            $table->string('full name');
+            $table->enum('status', ['new', 'completed'])->default('new');
+            $table->text('comment')->nullable();
+            $table->foreignId('product_id')->index()->constrained('products');
+            $table->decimal('total_price',8,2);
             $table->timestamps();
         });
     }
