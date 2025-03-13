@@ -4,6 +4,10 @@
     <div>
         <hr>
             <div>
+                <a href="{{route('order.index')}}"> Заказы</a>
+            </div>
+        <hr>
+            <div>
                 <a href="{{route('product.create')}}"> Добавить</a>
             </div>
         <hr>

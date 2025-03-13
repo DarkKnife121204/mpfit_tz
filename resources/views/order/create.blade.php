@@ -1,22 +1,22 @@
-@extends('layout.product')
+@extends('layout.order')
 @section('content')
     <head><title>Create</title></head>
     <div>
         <hr>
         <div>
-            <form action="{{route('product.store')}}" method="Post">
+            <form action="{{route('order.store')}}" method="Post">
                 @csrf
                 <div style="margin-bottom: 15px;">
-                    <input type="text" name="name" placeholder="name" value="{{old('name')}}">
+                    <input type="text" name="full_name" placeholder="Full name" value="{{old('full_name')}}">
                 </div>
                 <div style="margin-bottom: 15px;">
-                    <input type="number" step="0.01" min='0' name="price" placeholder="price" value="{{old('price')}}">
+                    <input type="number"  min='1' name="product_id" placeholder="product_id" value="{{old('product_id')}}">
                 </div>
                 <div style="margin-bottom: 15px;">
-                    <input type="number" name="category_id" min="1" max="3" placeholder="id" value="{{old('category_id')}}">
+                    <input type="number" name="quantity" placeholder="quantity" value="{{old('quantity')}}">
                 </div>
                 <div style="margin-bottom: 15px;">
-                    <textarea name="description" placeholder="description" >{{old('description')}}</textarea>
+                    <textarea name="comment" placeholder="comment" >{{old('comment')}}</textarea>
                 </div>
                 <div style="margin-bottom: 15px;"><input type="submit" value="Добавить"></div>
             </form>
